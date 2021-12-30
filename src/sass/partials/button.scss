@@ -1,7 +1,9 @@
+@import '../configs/vars.scss';
+
 .button {
 	padding: 8px 24px;
 	text-decoration: none;
-	background-color: #EB4A4B;
+	background-color: $black;
 	text-align: center;
 	color: #ffffff;
 	border: none;

@@ -1,0 +1,28 @@
+.stars {
+
+	&__container {
+		z-index: -3;
+	}
+
+	&__star {
+		width: 2px;
+		height: 2px;
+		border-radius: 6px;
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: 3;
+		background: #fff;
+		opacity: 0.9;
+		box-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+		animation: linear infinite staranimation;
+		opacity: 1;
+	}
+
+	@keyframes staranimation {
+		0% { opacity: 1; }
+		50% { opacity: 0.2; }
+		100% { opacity: 1; }
+	}
+
+}
