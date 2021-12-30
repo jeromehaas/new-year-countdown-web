@@ -1,7 +1,7 @@
 {
   "name": "new-year-countdown-web",
   "version": "1.0.0",
-  "description": "This setup can be as a boilerplate to extend your taskrunner application.",
+  "description": "Timer to track time until new year's eve",
   "main": "index.js",
   "scripts": {
     "start": "gulp"
