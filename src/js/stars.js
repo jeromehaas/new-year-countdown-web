@@ -36,16 +36,6 @@ class Stars {
 		if (!document.querySelector(`.js-${this.name}`)) return;
 		this.insertStar();
 		this.addAnimation();
-		window.addEventListener("resize", () => {
-			this.clearStars();
-			setTimeout(() => {
-				this.getMainHeight();
-				this.getMainWidth();
-				this.getNumberOfStars();
-				this.insertStar();
-				this.addAnimation();
-			}, 1000);
-		});
 	}
 
 	insertStar () {

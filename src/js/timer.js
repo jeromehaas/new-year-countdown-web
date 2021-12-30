@@ -26,6 +26,7 @@ class Timer {
 			if (this.totalSeconds < 0) { clearInterval(interval); }
 			this.countTime();
 		}, 1000);
+		
 	}
 	
 	getNextNewYearsEveDate () {
@@ -39,27 +40,30 @@ class Timer {
 		if (this.totalSeconds > 0) {
 			--this.timeLeft.seconds;
 			--this.totalSeconds;
+			this.animateFlip(this.time.seconds, this.timeLeft.seconds);
 		}
 		if (this.timeLeft.minutes >= 0 && this.timeLeft.seconds < 0) {
 			this.timeLeft.seconds = 59;
 			--this.timeLeft.minutes;
+			this.animateFlip(this.time.minutes, this.timeLeft.minutes);
 		}
 		if (this.timeLeft.hours >= 0 && this.timeLeft.minutes < 0) {
 			this.timeLeft.minutes = 59;
 			--this.timeLeft.hours;
+			this.animateFlip(this.time.hours, this.timeLeft.hours);
 		}
 		if (this.timeLeft.days >= 0 && this.timeLeft.hours < 0) {
 			this.timeLeft.hours = 23;
 			--this.timeLeft.days;
+			this.animateFlip(this.time.days, this.timeLeft.days);
 		}
-		this.printTime();
 	}
 
 	printTime() {
-		this.animateFlip(this.time.days, this.timeLeft.days);
-		this.animateFlip(this.time.hours, this.timeLeft.hours);
-		this.animateFlip(this.time.minutes, this.timeLeft.minutes);
-		this.animateFlip(this.time.seconds, this.timeLeft.seconds);
+			this.animateFlip(this.time.days, this.timeLeft.days);
+			this.animateFlip(this.time.hours, this.timeLeft.hours);
+			this.animateFlip(this.time.minutes, this.timeLeft.minutes);
+			this.animateFlip(this.time.seconds, this.timeLeft.seconds);
 	}
 
 	animateFlip(element, value) {
@@ -68,9 +72,9 @@ class Timer {
 		if (valueInDom === currentValue) return;
 		element.querySelector(".timer__element--top-back span").innerText = currentValue;
 		element.querySelector(".timer__element--bottom-back span").innerText = currentValue;
-		gsap.to(element.querySelector(".timer__element--top"), 1, {
+		gsap.to(element.querySelector(".timer__element--top"), 0.7, {
 			rotationX: "-180deg",
-			transformPerspective: 200,
+			transformPerspective: 300,
 			ease: Quart.easeOut,
 			onComplete: function () {
 				element.querySelector(".timer__element--top").innerText = currentValue;
@@ -78,9 +82,9 @@ class Timer {
 				gsap.set(element.querySelector(".timer__element--top"), { rotationX: 0 });
 			}
 		})
-		gsap.to(element.querySelector(".timer__element--top-back"), 1, {
+		gsap.to(element.querySelector(".timer__element--top-back"), 0.7, {
 			rotationX: 0,
-			transformPerspective: 200,
+			transformPerspective: 300,
 			ease: Quart.easeOut,
 			clearProps: "all"
 		});

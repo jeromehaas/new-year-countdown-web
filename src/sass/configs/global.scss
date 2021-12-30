@@ -10,6 +10,11 @@
   scrollbar-width: none;
   scroll-behavior: smooth;
   cursor: url('/src/icons/cursor/cursor.svg') 0 0, auto !important;
+	-webkit-backface-visibility: hidden;
+	-webkit-perspective: 0;
+	-webkit-transform-style: preserve-3d;
+	-webkit-backface-visibility: hidden;
+	-webkit-transform: translate3d(0,0,0);
 }
 
 *::-webkit-scrollbar {
