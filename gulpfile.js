@@ -65,6 +65,8 @@ const sassTask = (done) => {
 const jsTask = (done) => {
 	gulp.src([
 		'./src/js/accordion.js', 
+		'./src/js/timer.js', 
+		'./src/js/stars.js', 
 	])
 	.pipe(plumber({errorHandler: notifier.error}))
 	.pipe(babel({

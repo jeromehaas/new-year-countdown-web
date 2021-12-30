@@ -3,12 +3,16 @@
 @import './configs/fonts.scss';
 @import './configs/vars.scss';
 @import './configs/global.scss';
+@import './configs/main.scss';
 
 /* PARTIALS */
 @import './partials/button.scss';
 @import './partials/page.scss';
+@import './partials/stars.scss';
+@import './partials/timer.scss';
+@import './partials/title.scss';
+@import './partials/author.scss';
 
 /* SECTIONS */
 @import './sections/welcome.scss';
 @import './sections/header.scss';
-@import './sections/accordion.scss';

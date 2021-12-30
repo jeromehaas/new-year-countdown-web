@@ -1,14 +1,21 @@
-body {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	min-height: 50vh;
+@import '../configs/vars.scss';
+
+* {
+	box-sizing: border-box;
+	margin: 0px;
+	padding: 0px;
 }
 
-.title {
-	font-size: 80px;
-	color: darkblue;
-	font-weight: bold;
-	text-transform: uppercase;
-	background-color: red;
+.main-content {
+	align-items: center;
+	z-index: 5;
+	background-position: bottom;
+	display: flex;
+	flex-flow: column nowrap;
+	font-family: "Red Hat Text", sans-serif;
+	min-height: 100vh;
+	justify-content: flex-start;
+	line-height: 1.5;
+	padding-top: 15vh;
+	position: relative;
 }
